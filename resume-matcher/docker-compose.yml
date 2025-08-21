@@ -10,9 +10,9 @@ services:
       - SPRING_PROFILES_ACTIVE=prod
       - SPRING_REDIS_HOST=redis
       - SPRING_REDIS_PORT=6379
-      - JWT_SECRET=thisisresumerankersecretkeyforcheckingpurposeu9XvL2qK8zR1mT7eYpQwB3cV6nJxZ0aFhGdKsLtMbNcPdReSfUgViWjXkYlZmAoBp
-      - GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=
-      - GEMINI_API_KEY=AIzaSyAZyGPWkLpPr7Wpcnk5iMnf2NsH8rKGhj0
+      - JWT_SECRET=
+      - GEMINI_API_URL=
+      - GEMINI_API_KEY=
     depends_on:
       redis:
         condition: service_healthy # Wait for Redis to be healthy
