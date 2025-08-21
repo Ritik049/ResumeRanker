@@ -1,0 +1,58 @@
+
+
+services:
+  backend:
+    build: .
+    container_name: resume-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
+      - JWT_SECRET=thisisresumerankersecretkeyforcheckingpurposeu9XvL2qK8zR1mT7eYpQwB3cV6nJxZ0aFhGdKsLtMbNcPdReSfUgViWjXkYlZmAoBp
+      - GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=
+      - GEMINI_API_KEY=AIzaSyAZyGPWkLpPr7Wpcnk5iMnf2NsH8rKGhj0
+    depends_on:
+      redis:
+        condition: service_healthy # Wait for Redis to be healthy
+    networks:
+      - my_app_network
+
+  redis:
+    image: redis:7
+    container_name: resume-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: always
+    networks:
+      - my_app_network
+    healthcheck: # Health check added for Redis
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 50
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: resume-jenkins
+    user: root
+    ports:
+      - "9090:8080"   # Jenkins UI on port 9090
+      - "50000:50000" # For Jenkins agent connections
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    networks:
+      - my_app_network
+
+volumes:
+  redis-data:
+  jenkins_home:
+
+networks:
+  my_app_network:
+    driver: bridge
