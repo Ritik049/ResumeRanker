@@ -1,70 +1,47 @@
-# ResumeRanker
+# Resume Ranker / Smart Resume Analyzer
 
-**AI-powered Resume Ranking System**  
-Spring Boot + Docker + Jenkins CI/CD + JWT secured APIs.
+## Project Overview
+
+**Resume Ranker** is a **Java Spring Boot application** that analyzes and ranks resumes against job descriptions.  
+It offers both **Normal Resume Analysis** and **Smart AI-Powered Resume Analysis**.  
+
+Key features:  
+- Match score computation using **cosine similarity**  
+- Keyword extraction from resumes and job descriptions  
+- Missing skill identification  
+- AI-powered feedback and strengths summary  
+- JWT-based authentication with **Redis token revocation**  
+- CI/CD integration with **Jenkins** and Docker  
 
 ---
 
 ## Table of Contents
-- [Features](#features)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Prerequisites](#prerequisites)
-- [Installation & Running](#installation--running)
-- [Endpoints](#endpoints)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [Testing](#testing)
-- [Notes / Tips](#notes--tips)
+
+1. [Technologies Used](#technologies-used)  
+2. [Project Structure](#project-structure)  
+3. [Architecture](#architecture)  
+4. [Getting Started](#getting-started)  
+5. [Important APIs](#important-apis)  
+6. [Postman Links](#postman-links)  
+7. [License](#license)  
 
 ---
 
-## Features
-- AI-powered resume ranking using Gemini API
-- JWT authentication for secure endpoints
-- Dockerized for local & production deployment
-- CI/CD via Jenkins for automated builds & deployments
+## Technologies Used
+
+| Layer | Technology / Library | Purpose |
+|-------|-------------------|---------|
+| Backend | Spring Boot | REST API framework |
+| Security | Spring Security, JWT | Authentication & Authorization |
+| Caching | Redis | JWT token revocation and session management |
+| NLP | Stanford CoreNLP, Apache Tika | Resume text extraction, tokenization |
+| Similarity | Cosine Similarity | Resume vs Job scoring |
+| AI / ML | Custom AI prompts / Smart Analysis | Resume evaluation and feedback generation |
+| Build & CI/CD | Maven, Jenkins, Docker | Build automation, containerization, CI/CD |
+| Database | MySQL / MongoDB | User & resume data storage |
+| Frontend | React (optional) | Resume upload interface and results |
 
 ---
 
-## Architecture
-- **Backend:** Spring Boot 3, layered architecture  
-  - `controller` → REST endpoints  
-  - `service` → business logic  
-  - `repository` → DB/Redis interaction  
-  - `security` → JWT, filters, authentication  
-- **Database / Cache:** Redis for session & temporary data  
-- **CI/CD:** Jenkins pipeline builds, pushes, deploys Docker images  
-- **Containerization:** Docker, docker-compose for orchestration  
-- **External API:** Gemini API for AI content ranking  
+## Project Structure
 
-**Architecture Diagram:**  
-![architecture](docs/sequence-diagrams/architecture.png)  *(add image if you have)*
-
----
-
-## Technology Stack
-- Java 17+, Spring Boot 3
-- Maven build
-- Redis
-- JWT Authentication
-- Docker & Docker Compose
-- Jenkins for CI/CD
-- Gemini API (Google Generative Language)
-
----
-
-## Prerequisites
-- Docker & Docker Compose
-- Java 17+
-- Maven / mvnw
-- Jenkins (optional for CI/CD)
-- Git
-
----
-
-## Installation & Running
-
-1. **Clone Repo**  
-```bash
-git clone https://github.com/YourUsername/ResumeRanker.git
-cd ResumeRanker/resume-matcher
