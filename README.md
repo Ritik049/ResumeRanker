@@ -104,7 +104,7 @@ cd resume-matcher
 
 * Analyse APIs (Resume Analysis): [Analyse Collection](https://documenter.getpostman.com/view/36779828/2sB2x3nYvK#dcd935c6-d168-47e3-806d-62d125c528b2)
 
-* Auth & User Management APIs: [Auth collection](https://testingteam-3876.postman.co/documentation/36779828-a0b71ad7-18b3-4371-b97c-6275a8719d07/publish?workspaceId=758b9112-24a2-43f4-bfed-a2d0b8a8418d)
+* Auth & User Management APIs: [Auth collection](https://documenter.getpostman.com/view/36779828/2sB3BLjSvq)
 
 ---
 
