@@ -45,3 +45,25 @@ Key features:
 ## Project Structure
 Below is the project structure and flow of **ResumeRanker**:
 ![ResumeRanker Architecture](ResumeRankerArchitecture.png)
+
+---
+
+## Important API
+
+| Endpoint                     | Method | Description                       | Request Body / Headers                                               | Response                                            |
+| ---------------------------- | ------ | --------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------- |
+| `/auth/register`             | POST   | Register a new user               | JSON `{ "username": "user", "password": "pass" }`                    | 200 OK, User registered                             |
+| `/auth/login`                | POST   | User login, returns JWT token     | JSON `{ "username": "user", "password": "pass" }`                    | 200 OK, JWT token                                   |
+| `/auth/logout`               | POST   | Logout user, invalidate JWT token | Bearer JWT in `Authorization` header                                 | 200 OK, Logged out                                  |
+| `/auth/role/create`          | POST   | Create a new role (Admin only)    | JSON `{ "roleName": "ROLE_USER" }` + Bearer JWT                      | 200 OK, Role created                                |
+| `/auth/admin/revoke-token`   | POST   | Revoke JWT token using Redis      | JSON `{ "token": "<jwt>" }` + Admin Bearer JWT                       | 200 OK, Token revoked                               |
+| `/user/create`               | POST   | Create a new user (Admin only)    | JSON `{ "username": "user", "password": "pass" }` + Admin Bearer JWT | 200 OK, User created                                |
+| `/api/resumes/analyze`       | POST   | Normal resume analysis            | JSON `{ "resume": "...", "jobDescription": "..." }` + Bearer JWT     | 200 OK, Match score, keywords, missing skills       |
+| `/smart/api/resumes/analyze` | POST   | Smart AI-powered resume analysis  | JSON `{ "resume": "...", "jobDescription": "..." }` + Bearer JWT     | 200 OK, Match score, AI feedback, strengths summary |
+| `/jenkins/check`             | GET    | CI/CD test endpoint               | Bearer JWT                                                           | 200 OK, "Jenkins pushed this fine and CI/CD worked" |
+
+### Postman Links for Full API Documentation
+
+* Analyse APIs (Resume Analysis): Postman Link
+
+* Auth & User Management APIs: Postman Link
