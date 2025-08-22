@@ -18,12 +18,11 @@ Key features:
 ## Table of Contents
 
 1. [Technologies Used](#technologies-used)  
-2. [Project Structure](#project-structure)  
-3. [Architecture](#architecture)  
-4. [Getting Started](#getting-started)  
-5. [Important APIs](#important-apis)  
-6. [Postman Links](#postman-links)  
-7. [License](#license)  
+2. [Project Structure](#project-structure)   
+3. [Getting Started](#getting-started)  
+4. [Important APIs](#important-apis)  
+5. [Postman Links](#postman-links)  
+6. [License](#license)  
 
 ---
 
@@ -44,4 +43,5 @@ Key features:
 ---
 
 ## Project Structure
+Below is the project structure and flow of **ResumeRanker**:
 ![ResumeRanker Architecture](ResumeRankerArchitecture.png)
