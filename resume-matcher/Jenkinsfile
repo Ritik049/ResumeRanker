@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Ritik049/ResumeRanker.git'
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                sh '''
+                  echo "Starting deployment..."
+                  docker-compose pull backend
+                  docker-compose up -d
+                '''
+            }
+        }
+    }
+}

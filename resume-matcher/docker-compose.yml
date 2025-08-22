@@ -2,7 +2,8 @@
 
 services:
   backend:
-    build: .
+#    build: .
+    image: ritik047/resume-backend
     container_name: resume-backend
     ports:
       - "8080:8080"
@@ -36,16 +37,19 @@ services:
       retries: 50
 
   jenkins:
-    image: jenkins/jenkins:lts
     container_name: resume-jenkins
+    image: jenkins/jenkins:lts
     user: root
+    restart: always
     ports:
-      - "9090:8080"   # Jenkins UI on port 9090
-      - "50000:50000" # For Jenkins agent connections
+      - "9090:8080"
+      - "50000:50000"
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-    restart: always
+      - C:/Program Files/Docker/Docker/resources/bin/docker.exe:/usr/bin/docker
+    environment:
+      - DOCKER_HOST=tcp://host.docker.internal:2375
     networks:
       - my_app_network
 
