@@ -47,9 +47,9 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-      - C:/Program Files/Docker/Docker/resources/bin/docker.exe:/usr/bin/docker
-    environment:
-      - DOCKER_HOST=tcp://host.docker.internal:2375
+#      - C:/Program Files/Docker/Docker/resources/bin/docker.exe:/usr/bin/docker
+#    environment:
+#      - DOCKER_HOST=tcp://host.docker.internal:2375
     networks:
       - my_app_network
 
