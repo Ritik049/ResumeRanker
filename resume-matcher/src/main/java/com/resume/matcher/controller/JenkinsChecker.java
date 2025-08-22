@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/jenkins-check")
+@RequestMapping("/jenkins")
 public class JenkinsChecker {
 
-    @GetMapping
+    @GetMapping("/checking")
     public String checkingJenkins()
     {
         return "Jenkins pushed this fine and CI/CD worked";
