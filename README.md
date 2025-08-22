@@ -48,6 +48,40 @@ Below is the project structure and flow of **ResumeRanker**:
 
 ---
 
+## Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+- **Java 17+**
+- **Maven**
+- **Docker**
+- **Redis**
+- **Postman** (optional)
+
+### Clone the Repository
+
+git clone https://github.com/Ritik049/ResumeRanker.git
+cd ResumeRanker
+
+### Build the project 
+cd resume-matcher
+./mvnw clean package -DskipTests
+
+### Run With Docker
+docker build -t resume-ranker:latest ./resume-matcher
+docker run -d --name resume-redis -p 6379:6379 redis
+docker run -d --name resume-ranker -p 8080:8080 resume-ranker:latest
+
+### Run locally without  docker
+cd resume-matcher
+./mvnw spring-boot:run
+
+---
+
+
+
 ## Important APIs
 
 | Endpoint                     | Method | Description                       | Request Body / Headers                                               | Response                                            |
