@@ -44,4 +44,4 @@ Key features:
 ---
 
 ## Project Structure
-
+!(ResumeArchitecture.png)
