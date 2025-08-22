@@ -38,8 +38,8 @@ Key features:
 | Similarity | Cosine Similarity | Resume vs Job scoring |
 | AI / ML | Custom AI prompts / Smart Analysis | Resume evaluation and feedback generation |
 | Build & CI/CD | Maven, Jenkins, Docker | Build automation, containerization, CI/CD |
-| Database | MySQL / MongoDB | User & resume data storage |
-| Frontend | React (optional) | Resume upload interface and results |
+| Database | H2 | User & resume data storage |
+| Frontend | React | Resume upload interface and results |
 
 ---
 
