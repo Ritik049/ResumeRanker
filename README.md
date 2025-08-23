@@ -108,5 +108,15 @@ cd resume-matcher
 
 ---
 
+## 🎥 Project Demo Videos
+
+### 🔹 ResumeRanker Demo
+[![ResumeRanker Demo](https://img.youtube.com/vi/w0EpHqR-_9w/0.jpg)](https://youtu.be/w0EpHqR-_9w?si=p2AdxpOC46HMZkOc)
+
+### 🔹 Jenkins CI/CD Integration Demo
+[![Jenkins CI/CD Demo](https://img.youtube.com/vi/6EG2ySgDl2k/0.jpg)](https://youtu.be/6EG2ySgDl2k)
+
+---
+
 ## License 
 This project is licensed under the MIT License.
